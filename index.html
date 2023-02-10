@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tap.Link like website</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background-color: lightgray;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+        width: 300px;
+        height: 400px;
+      }
+
+      .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .text {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      .button {
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-decoration: none;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    </div>
+    <script>
+      fetch('config.json')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.querySelector('.container');
+  
+          data.forEach(item => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+  
+            const avatar = document.createElement('img');
+            avatar.src = item.avatar;
+            avatar.classList.add('avatar');
+  
+            const name = document.createElement('div');
+            name.classList.add('name');
+            name.textContent = item.name;
+  
+            const text = document.createElement('div');
+            text.classList.add('text');
+            text.textContent = item.text;
+  
+            const button = document.createElement('a');
+            button.href = item.url;
+            button.classList.add('button');
+            button.textContent = 'Visit';
+  
+            card.appendChild(avatar);
+            card.appendChild(name);
+            card.appendChild(text);
+            card.appendChild(button);
+  
+            container.appendChild(card);
+          });
+        });
+    </script>
+  </body>
+</html>
