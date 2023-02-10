@@ -1,0 +1,15 @@
+[
+  {
+    "name": "YouTube",
+    "text": "A cool platform for watching videos",
+   
+"avatar": "https://cdn.icon-icons.com/icons2/1584/PNG/512/1495474667-youtube_82324.png",
+"url": "https://youtube.com"
+},
+{
+"name": "Facebook",
+"text": "A popular social network",
+"avatar": "https://cdn.icon-icons.com/icons2/870/PNG/512/facebook_icon-icons.com_68760.png",
+"url": "https://facebook.com"
+}
+}
